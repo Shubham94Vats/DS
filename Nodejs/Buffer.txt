@@ -1,0 +1,26 @@
+// 17. Buffer.
+// Buffer is used to dealing with binary data
+// Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap
+// http://nodejs.org/api/buffer.html
+
+
+new Buffer(size);                                                   // Allocates a new buffer of size octets.
+new Buffer(array);                                                  // Allocates a new buffer using an array of octets.
+new Buffer(str, [encoding]);                                        // Allocates a new buffer containing the given str. encoding defaults to 'utf8'.
+
+Buffer.isEncoding(encoding);                                        // Returns true if the encoding is a valid encoding argument, or false otherwise.
+Buffer.isBuffer(obj);                                               // Tests if obj is a Buffer
+Buffer.concat(list, [totalLength]);                                 // Returns a buffer which is the result of concatenating all the buffers in the list together.
+Buffer.byteLength(string, [encoding]);                              // Gives the actual byte length of a string.
+
+buf.write(string, [offset], [length], [encoding]);                  // Writes string to the buffer at offset using the given encoding
+buf.toString([encoding], [start], [end]);                           // Decodes and returns a string from buffer data encoded with encoding (defaults to 'utf8') beginning at start (defaults to 0) and ending at end (defaults to buffer.length).
+buf.toJSON();                                                       // Returns a JSON-representation of the Buffer instance, which is identical to the output for JSON Arrays
+buf.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd]);  // Does copy between buffers. The source and target regions can be overlapped
+buf.slice([start], [end]);                                          // Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes. Negative indexes start from the end of the buffer.   
+buf.fill(value, [offset], [end]);                                   // Fills the buffer with the specified value
+buf[index];                                                         // Get and set the octet at index
+buf.length;                                                         // The size of the buffer in bytes, Note that this is not necessarily the size of the contents
+
+buffer.INSPECT_MAX_BYTES;                                           // How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.
+ 
