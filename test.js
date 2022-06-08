@@ -1,8 +1,12 @@
-function Pen(name, color, price) {
-  this.name = name;
-  this.color = color;
-  this.price = price;
-}
+function my() {
+  // func scope
+  let x = 10;
+  if (true) {
+    let x = 20;
+  }
 
-const pen1 = new Pen("Marker", "Blue", "$3");
-console.log(this.name);
+  console.log(x);
+}
+console.log(x);
+
+my();
