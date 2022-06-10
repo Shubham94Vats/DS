@@ -1,12 +1,23 @@
-function my() {
-  // func scope
-  let x = 10;
-  if (true) {
-    let x = 20;
-  }
+let obj = {
+  test1: {
+    name: 'sunil',
+    age: 24,
+  },
+  test2: {
+    name: 'anil',
+    age: 21,
+  },
+  test3: {
+    name: 'amit',
+    age: 29,
+  },
+  test4: {
+    name: 'robin',
+    age: 24,
+  },
+};
 
-  console.log(x);
+
+for(let i in obj){
+    console.log(i)
 }
-console.log(x);
-
-my();
